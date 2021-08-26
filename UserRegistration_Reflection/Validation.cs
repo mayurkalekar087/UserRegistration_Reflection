@@ -13,6 +13,7 @@ namespace UserRegistration_Reflection
         public string RegexPasswordRule1 = "^[a-zA-Z]{8,}$";
         public string RegexPasswordRule2 = "^[A-Z]+[a-zA-Z]{8,}$";
         public string RegexPasswordRule3 = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}$";
+        public string RegexPasswordRule4 = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}$";
         public void FirstName(string firstName)
         {
             if (Regex.IsMatch(firstName, RegexName) == false)
@@ -47,6 +48,11 @@ namespace UserRegistration_Reflection
         {
             if (Regex.IsMatch(passwordRule3, RegexPasswordRule3) == false)
                 throw new ExceptionHandling(ExceptionHandling.ExceptionsCustomMessage.INVALID_INPUT, " : Ivalid PasswordRule3");
+        }
+        public void PasswordRule4(string passwordRule4)
+        {
+            if (Regex.IsMatch(passwordRule4, RegexPasswordRule4) == false)
+                throw new ExceptionHandling(ExceptionHandling.ExceptionsCustomMessage.INVALID_INPUT, " : Ivalid PasswordRule4");
         }
     }
 }
