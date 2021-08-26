@@ -11,6 +11,7 @@ namespace UserRegistration_Reflection
         public string RegexEmail = "^[a-z0-9A-Z]+([._+-][a-z0-9A-Z]+)*[@][a-z0-9A-Z]+[.][a-zA-Z]{2,3}(.[a-zA-Z]{2})?$";
         public string RegexMobileNumber = "^[0-9]{2}[ ][1-9][0-9]{9}$";
         public string RegexPasswordRule1 = "^[a-zA-Z]{8,}$";
+        public string RegexPasswordRule2 = "^[A-Z]+[a-zA-Z]{8,}$";
         public void FirstName(string firstName)
         {
             if (Regex.IsMatch(firstName, RegexName) == false)
@@ -35,6 +36,11 @@ namespace UserRegistration_Reflection
         {
             if (Regex.IsMatch(passwordRule1, RegexPasswordRule1) == false)
                 throw new ExceptionHandling(ExceptionHandling.ExceptionsCustomMessage.INVALID_INPUT, " : Ivalid PasswordRule1");
+        }
+        public void PasswordRule2(string passwordRule2)
+        {
+            if (Regex.IsMatch(passwordRule2, RegexPasswordRule2) == false)
+                throw new ExceptionHandling(ExceptionHandling.ExceptionsCustomMessage.INVALID_INPUT, " : Ivalid PasswordRule2");
         }
     }
 }
