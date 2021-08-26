@@ -7,6 +7,7 @@ namespace UserRegistration_Reflection
         static void Main(string[] args)
         {
             Console.WriteLine("User Registration Using Reflection!");
+            UserReflection.ReflectionTest();
         }
     }
 }
